@@ -9,7 +9,144 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      chat_messages: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          message_type: string | null
+          response: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          message_type?: string | null
+          response?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          message_type?: string | null
+          response?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      documents: {
+        Row: {
+          category: string | null
+          file_size: number | null
+          file_url: string | null
+          id: string
+          name: string
+          processed: boolean | null
+          type: string
+          upload_date: string
+          user_id: string
+        }
+        Insert: {
+          category?: string | null
+          file_size?: number | null
+          file_url?: string | null
+          id?: string
+          name: string
+          processed?: boolean | null
+          type: string
+          upload_date?: string
+          user_id: string
+        }
+        Update: {
+          category?: string | null
+          file_size?: number | null
+          file_url?: string | null
+          id?: string
+          name?: string
+          processed?: boolean | null
+          type?: string
+          upload_date?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          aadhaar_last_four: string | null
+          annual_income: number | null
+          city: string | null
+          created_at: string
+          employment_type: string | null
+          full_name: string | null
+          goals: string[] | null
+          id: string
+          phone: string | null
+          tax_regime: string | null
+          updated_at: string
+        }
+        Insert: {
+          aadhaar_last_four?: string | null
+          annual_income?: number | null
+          city?: string | null
+          created_at?: string
+          employment_type?: string | null
+          full_name?: string | null
+          goals?: string[] | null
+          id: string
+          phone?: string | null
+          tax_regime?: string | null
+          updated_at?: string
+        }
+        Update: {
+          aadhaar_last_four?: string | null
+          annual_income?: number | null
+          city?: string | null
+          created_at?: string
+          employment_type?: string | null
+          full_name?: string | null
+          goals?: string[] | null
+          id?: string
+          phone?: string | null
+          tax_regime?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      tax_calculations: {
+        Row: {
+          calculated_tax: number
+          created_at: string
+          deductions: Json | null
+          id: string
+          income_amount: number
+          potential_savings: number
+          tax_regime: string
+          user_id: string
+        }
+        Insert: {
+          calculated_tax: number
+          created_at?: string
+          deductions?: Json | null
+          id?: string
+          income_amount: number
+          potential_savings: number
+          tax_regime: string
+          user_id: string
+        }
+        Update: {
+          calculated_tax?: number
+          created_at?: string
+          deductions?: Json | null
+          id?: string
+          income_amount?: number
+          potential_savings?: number
+          tax_regime?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
